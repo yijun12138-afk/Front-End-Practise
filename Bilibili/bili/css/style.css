@@ -15,37 +15,37 @@
     overflow: hidden;
 }
 .top-banner{
-    position: absolute; /* 脱离文档流，固定在父容器内 */
-    top: 0; /* 顶部对齐父容器 */
-    left: 0; /* 左侧对齐父容器 */
-    width: 100%; /* 宽度铺满父容器 */
-    height: 100%; /* 高度铺满父容器 */
+    position: absolute;
+    top: 0;
+    left: 0; 
+    width: 100%;
+    height: 100%;
     object-fit: cover; /* 保持图片比例，避免拉伸变形 */
-    z-index: 0; /* 层级最低，确保在所有元素下方 */
+    z-index: 0;
 }
-/* 3. 上层元素：提升层级，确保在图片上方 */
+
 .topleft,
 .search-container,
 .bilibili-logo,
 .topright {
-    position: relative; /* 开启相对定位，使 z-index 生效 */
-    z-index: 1; /* 层级高于背景图（z-index:0） */
+    position: relative;
+    z-index: 1; /* 层级高于背景图 */
 }
 .topleft {
-    width: auto; /* 自动适应内容宽度 */
+    width: auto;
     height: 60px;
     /* background: rgb(177, 173, 173);  */
     display: flex;
     align-items: center;
 }
-/* 首页按钮所在的li：设置flex布局，让图标和文字横向对齐 */
-.topleft li:first-child { /* 只针对首页所在的第一个li */
+
+.topleft li:first-child { 
     display: flex;
     align-items: center;
-    gap: 10px; /* 图标与文字的间距（可调整） */
+    gap: 20px; /* 图标与文字的间距 */
 }
 .topleft .icon-bilibili-fill {
-    font-size: 30px; /* 图标大小（可调整） */
+    font-size: 35px; /* 图标大小 */
     color: #fff;
 }
 .topleft li {
@@ -55,17 +55,16 @@
     color: #fff;
 }
 .search-container {
-    display: flex; /* 搜索框和按钮横向排列 */
+    display: flex;
     margin: 10px 20px 0 200px;
-    opacity: 0.7;
+    opacity: 0.6;
 }
 .topsearch {
     width: 450px;
     height: 40px;
     border-radius: 10px;
     border: 1px solid #ccc;
-    padding: 0 10px;
-    margin: 0; /* 移除不必要的margin */
+    padding: 10px;
 }
 .search {
     width: 50px;
@@ -79,15 +78,15 @@
 .bilibili-logo {
     width: auto;
     top:-10px;
-    left:-10px;
+    left: 20px;
 }
 .bilibili-logo img {
-    width: 190px;
+    width: 180px;
     height: auto;
 }
 
 .topright {
-    width: auto; /* 自动适应内容宽度 */
+    width: auto;
     height: 60px;
     /* background: rgb(177, 173, 173);  */
     display: flex;
@@ -96,34 +95,33 @@
     align-items: center;
 }
 .topright li {
-    margin-right: 20px;
+    margin-right: 15px;
     display: block;
     text-align: center;
     width: 60px; /* 固定宽度，避免图标文字错位 */
 }
-
 .topright li a {
     color: #fff;
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-size: 18px;
+    font-size: 17px;
     font-weight: 400;
     gap:2px;
 }
 .topright .iconfont {
-    font-size: 25px; 
+    font-size: 24px; 
     color: #fff;
 }
-/* 修改main的宽度：110vw实现左右扩展（超出屏幕默认宽度），max-width限制最大扩展幅度，margin:0 auto保证居中 */
+
 .main {
-    width: 110vw; /* 核心修改：向屏幕左右扩大（100vw为屏幕宽度，110vw即左右各扩展5%） */
-    max-width: 2200px; /* 核心修改：限制最大宽度，避免超宽屏幕下布局错乱 */
+    width: 100%; /* 核心修改：向屏幕左右扩大（100vw为屏幕宽度，110vw即左右各扩展5%） */
+    max-width: 2200px;
     margin: 0 auto; /* 保持整体居中，确保扩展后左右留白均匀 */
 }
 .menu {
-    width: 100%; /* 继承main宽度，确保与main边框对齐 */
-    height: 100px;
+    width: 100%;
+    height: 120px;
     background: #fff;
     margin-top: 30px;
     position: relative;
@@ -133,7 +131,7 @@
 .menuleft {
     display: flex;
     width: 190px;
-    height: 110px;
+    height: 120px;
     /* background: rgb(159, 158, 158); */
 }
 .menuleft-ul {
@@ -156,10 +154,15 @@
     display: block;
     text-decoration: none;
 }
+
 .menuleft-ul .icon-dongtai1{
+    line-height: 50px;
+    color: white;
     font-size: 37px;
 }
 .menuleft-ul .icon-remen{
+    line-height: 50px;
+    color: white;
     font-size: 28px;
 }
 .circle {
@@ -168,13 +171,6 @@
     text-align: center;
     border-radius: 100%;
     margin: 0 auto 4px;
-}
-/* 图标 */
-.icon-dongtai1,
-.icon-remen {
-    line-height: 50px;
-    font-size: 70px;
-    color: white;
 }
 .menucenter {
     width: 1700px;
@@ -192,12 +188,11 @@
     height: 50px;
     line-height: 46px;
     background: #f6f7f8;
-    margin: 8px 8px;
+    margin: 8px;
     border-radius: 5px;
     transition: 0.3s;
-    padding: 0 12px;
     cursor: pointer;
-    text-align: center; /* 让字居中在盒子内 */
+    text-align: center;
 }
 .menucenter li:hover {
     background-color: #ccc;
@@ -209,14 +204,14 @@
 .line {
     display: block;
     width: 1px;
-    height: 80px;
+    height:90px;
     margin: 10px;
     background-color: #ccc;
 }
 
 .menuright {
-    width: 490px; /* 调整宽度，适配扩展后的menu，确保与整体边框对齐 */
-    height: 110px;
+    width: 490px;
+    height: 120px;
     /* background: #ccc;  */
     display: flex;
     align-items: center;
@@ -232,13 +227,11 @@
 .menuright-ul li {
     width: 33%;
     text-align: center;
-    transition: all 0.5s;
 }
 .menuright-ul a {
     line-height: 34px;
     font-size: 19px;
     color: black;
-    transition: color linear 0.2s;
     display: block;
 }
 .menuright-ul a:hover {
@@ -250,25 +243,24 @@
     font-size: 21px;
     margin-right: 1px;
 }
-/* 修改center：宽度继承main，高度改为auto自适应内容，确保与main边框对齐 */
+
 .center {
-    width: 100%; /* 继承main宽度，与menu边框对齐 */
-    height: auto; /* 核心修改：由固定高度改为自适应，避免扩展后内容溢出 */
+    width: 100%;
+    height: auto; 
     margin-top: 60px;
     margin-left: 50px;
     display: flex;
     align-items: flex-start;
 }
-/* 修改centerleft：用vw单位实现宽度自适应（随main扩展而扩大），保持轮播图比例 */
+
 .centerleft {
     position: relative;
     width: 900px;
-    height: 0;
-    padding-bottom: 550px; /* 核心修改：用padding-bottom维持宽高比（原640:475≈4:3），避免图片变形 */
+    height: 550px;
     margin-top: 10px;
-    border-radius: 6px;
+    border-radius: 7px;
     /* background: rgb(177, 173, 173);  */
-    overflow: hidden; /* 隐藏超出容器的图片 */
+    overflow: hidden;
 }
 .box-img {
     position: absolute;
@@ -281,11 +273,11 @@
 .box-img img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* 保持图片比例，覆盖容器 */
+    object-fit: fill;/* 图片显示完全 */
 }
 .box-img.active {
     display: block; /* 激活状态的图片显示 */
-    z-index: 1; /* 确保当前图片在最上层 */
+    z-index: 1;
 }
 .box-left {
     position: absolute;
@@ -300,7 +292,7 @@
     font-size: 37px;
     cursor: pointer; /* 鼠标悬浮显示指针，提示可点击 */
     z-index: 10; /* 确保箭头在图片上层，不被遮挡 */
-    left: 10px;
+    left: 0px;
 }
 .box-left:hover {
     background-color: #00000050;
@@ -319,7 +311,7 @@
     font-size: 37px;
     cursor: pointer; /* 鼠标悬浮显示指针，提示可点击 */
     z-index: 10; /* 确保箭头在图片上层，不被遮挡 */
-    right: 10px;
+    right: 0px;
 }
 .box-right:hover {
     background-color: #00000050;
@@ -353,20 +345,49 @@
 .box-choses li.active {
     background-color: #fff; /* 激活的指示器变白，与hover效果一致 */
 }
-/* 修改center-ul：优化布局确保两行三列，宽度继承center剩余空间 */
+.submenu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.submenu li {
+    width: 100%;
+    float: none;
+    margin: 0;
+    padding: 8px 15px;
+    border-bottom: 1px solid #eee;
+    background: #fff;
+}
+.submenu li:last-child {
+    border-bottom: none;
+}
+.submenu li:hover {
+    background-color: #f5f5f5;
+}
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    z-index: 10;
+    width: 200px;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+}
+
 .center-ul {
-    flex: 1; /* 占据center剩余空间，与centerleft边框对齐 */
     display: flex;
+    flex: 1;
     flex-wrap: wrap;
     align-content: flex-start;
-    padding: 10px 30px; /* 核心修改：用vw单位设置左右内边距，适配扩展后的宽度 */
-    gap: 30px; /* 核心修改：用gap统一间距，确保布局整齐 */
+    padding: 10px 30px;
+    gap: 30px; 
 }
-/* 核心修改：center-ul的视频项用calc计算宽度，强制两行三列（3列占比33.33%） */
 .center-ul .video-item {
-    width: 370px; /* 100%宽度减去2个间距（15px*2），再平分3列 */
+    width: 370px;
     height: 310px;
-    margin: 0; /* 清除原margin，用gap控制间距 */
     border-radius: 6px;
     background: #fff;
     overflow: hidden;
@@ -379,16 +400,14 @@
     height: auto;
     display: block;
 }
-/* 视频信息区域样式 */
 .center-ul .video-info {
     padding: 8px;
 }
 .center-ul .video-title {
     font-size: 19px;
     color: #000;
-    margin: 0 0 4px 0;
+    margin-bottom: 4px;
     line-height: 1.2;
-    overflow: hidden;
 }
 .center-ul .video-up{
     font-size: 18px;
@@ -420,14 +439,13 @@
     display: block;
 }
 .video-data {
-    position: absolute; /* 绝对定位到图片左下角 */
+    position: absolute;
     bottom: 8px;
     left: 8px;
-    z-index: 5; /* 确保在图片上层显示 */
+    z-index: 5; 
     display: flex;
-    align-items: center;
     gap: 12px; /* 播放量和弹幕数量间距 */
-    color: #ffffff; /* 文字白色，提高对比度 */
+    color: #fff;
     font-size: 14px;
 }
 .video-time{
@@ -436,16 +454,14 @@
     right:8px;
     z-index: 5;
     display: flex;
-    align-items: center;
-    color: #ffffff;
+    color: #fff;
     font-size: 16px;
 }
-/* 核心优化：将纯色半透明盒子改为渐变样式 */
 .video-view {
     position: absolute;
     bottom: 0;
     left: 0;
-    z-index: 4; /* 层级低于数据文字，确保文字清晰显示 */
+    z-index: 4; 
     height: 40px; 
     width: 100%;
     /* 垂直渐变 */
@@ -455,20 +471,20 @@
 .video-data .danmu-count {
     display: flex;
     align-items: center;
-    gap: 4px; /* 图标和文字间距 */
+    gap: 4px; 
 }
-/* 修改main-ul：宽度继承main，优化布局确保每行五张 */
+
 .main-ul {
-    width: 100%; /* 继承main宽度，与center边框对齐 */
+    width: 100%;
     background: #fff;
     display: flex;
     flex-wrap: wrap;
     padding: 10px 2vw; /* 核心修改：用vw单位设置左右内边距，适配扩展后的宽度 */
     gap: 15px; /* 核心修改：用gap统一间距，确保布局整齐 */
 }
-/* 核心修改：main-ul的视频项用calc计算宽度，强制每行五张（5列占比20%） */
+
 .main-ul .video-item {
-    width: calc((100% - 60px) / 5); /* 100%宽度减去4个间距（15px*4），再平分5列 */
+    width: calc((100% - 60px) / 5); /* 每个间距15px */
     height: auto;
     border-radius: 6px;
     background: #fff;
@@ -504,34 +520,230 @@
 .main-ul .video-up:hover{
     color: #17a9da; 
 }
-.submenu {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+
+/* 响应式布局 */
+
+/* 中等屏幕（992px - 1199px） */
+@media (max-width: 1199px) {
+    .menucenter {
+        width: 1400px;
+    }
+    .menucenter li {
+        width: 100px;
+    }
+    .centerleft {
+        width: 750px;
+        padding-bottom: 458px; /* 保持宽高比 */
+    }
+    .center-ul .video-item {
+        width: 320px;
+        height: 280px;
+    }
+    .main-ul .video-item {
+        width: calc((100% - 60px) / 4); /* 4列 */
+    }
 }
-.submenu li {
-    width: 100%;
-    float: none;
-    margin: 0;
-    padding: 8px 15px;
-    border-bottom: 1px solid #eee;
-    background: #fff;
+
+/* 平板（768px - 991px） */
+@media (max-width: 991px) {
+    .top {
+        height: 150px;
+        flex-wrap: wrap;
+    }
+    .topleft {
+        order: 2;
+        width: 100%;
+        justify-content: center;
+        margin-top: 10px;
+    }
+    .search-container {
+        order: 1;
+        margin: 10px auto 0;
+    }
+    .topright {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        margin-top: 10px;
+    }
+    .bilibili-logo {
+        display: none;
+    }
+    
+    .menu {
+        height: auto;
+        flex-wrap: wrap;
+        padding: 10px 0;
+    }
+    .menuleft {
+        width: 100%;
+        justify-content: center;
+    }
+    .menuleft-ul {
+        margin-left: 0;
+        width: auto;
+    }
+    .menucenter {
+        width: 100%;
+        height: auto;
+        margin-left: 0;
+        justify-content: center;
+    }
+    .menuright {
+        width: 100%;
+        justify-content: center;
+    }
+    .menuright-ul {
+        width: 100%;
+        justify-content: center;
+    }
+    .line {
+        display: none; /* 在小屏幕上隐藏分隔线 */
+    }
+    
+    .center {
+        flex-direction: column;
+        margin-left: 0;
+        align-items: center;
+    }
+    .centerleft {
+        width: 90%;
+        padding-bottom: 50%; /* 保持宽高比 */
+    }
+    .center-ul {
+        width: 90%;
+        justify-content: center;
+    }
+    .center-ul .video-item {
+        width: calc(50% - 15px); /* 2列 */
+    }
+    
+    .main-ul .video-item {
+        width: calc((100% - 45px) / 3); /* 3列 */
+    }
 }
-.submenu li:last-child {
-    border-bottom: none;
+
+/* 手机（576px - 767px） */
+@media (max-width: 767px) {
+    .top {
+        height: auto;
+        padding: 10px;
+    }
+    .topleft {
+        flex-wrap: wrap;
+    }
+    .topleft li {
+        margin: 5px 10px;
+    }
+    .search-container {
+        width: 90%;
+    }
+    .topsearch {
+        width: 100%;
+    }
+    .topright {
+        flex-wrap: wrap;/* 换行 */
+    }
+    .topright li {
+        margin: 5px 10px;
+        width: auto;
+    }
+    
+    .menucenter {
+        overflow-x: auto; /* 水平滚动 */
+        justify-content: flex-start;
+        padding-bottom: 10px;
+    }
+    .menucenter li {
+        flex-shrink: 0; /* 防止项目缩小 */
+    }
+    
+    .centerleft {
+        width: 95%;
+    }
+    .center-ul {
+        width: 95%;
+    }
+    .center-ul .video-item {
+        width: 100%; /* 1列 */
+    }
+    
+    .main-ul {
+        padding: 10px 5vw;
+    }
+    .main-ul .video-item {
+        width: calc((100% - 30px) / 2); /* 2列 */
+    }
 }
-.submenu li:hover {
-    background-color: #f5f5f5;
+
+/* 小手机（小于576px） */
+@media (max-width: 575px) {
+    .topleft li:not(:first-child) {
+        display: none; /* 隐藏部分导航项 */
+    }
+    .topleft li:first-child {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .topright li:nth-child(n+4) {
+        display: none; /* 隐藏部分用户菜单项 */
+    }
+    
+    .menuleft-ul {
+        width: 100%;
+    }
+    .menuright-ul {
+        flex-direction: column;
+        height: auto;
+    }
+    .menuright-ul li {
+        width: 100%;
+        margin: 5px 0;
+    }
+    
+    .main-ul .video-item {
+        width: 100%; /* 1列 */
+    }
+    
+    .box-left, .box-right {
+        width: 25px;
+        height: 50px;
+        font-size: 24px;
+        line-height: 50px;
+    }
+    
+    .center-ul .video-title,
+    .main-ul .video-title {
+        font-size: 16px;
+    }
+    .center-ul .video-up,
+    .main-ul .video-up {
+        font-size: 14px;
+    }
 }
-.dropdown {
-    display: none;
-    position: absolute;
-    top: 50px;
-    left: 0;
-    background: #fff;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    z-index: 1000;
-    width: 200px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+/* 超小手机（小于400px） */
+@media (max-width: 399px) {
+    .topleft li {
+        margin: 3px 5px;
+    }
+    .topright li {
+        margin: 3px 5px;
+    }
+    
+    .menucenter li {
+        width: 90px;
+        height: 40px;
+        line-height: 36px;
+        font-size: 14px;
+    }
+    
+    .center-ul {
+        gap: 15px;
+    }
+    
+    .main-ul {
+        gap: 10px;
+    }
 }
