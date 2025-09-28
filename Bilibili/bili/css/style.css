@@ -263,12 +263,14 @@
     overflow: hidden;
 }
 .box-img {
+    width: 100%;
+    height: 100%;
     position: absolute;
     top: 0;
     left: 0;
-    display: none; /* 所有图片默认隐藏 */
-    width: 100%;
-    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease; /* 渐变效果 */
+    z-index: 0;
 }
 .box-img img {
     width: 100%;
@@ -276,7 +278,7 @@
     object-fit: fill;/* 图片显示完全 */
 }
 .box-img.active {
-    display: block; /* 激活状态的图片显示 */
+    opacity: 1; 
     z-index: 1;
 }
 .box-left {
