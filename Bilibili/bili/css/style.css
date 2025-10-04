@@ -115,9 +115,9 @@
 }
 
 .main {
-    width: 100%; /* 核心修改：向屏幕左右扩大（100vw为屏幕宽度，110vw即左右各扩展5%） */
+    width: 100%;
     max-width: 2200px;
-    margin: 0 auto; /* 保持整体居中，确保扩展后左右留白均匀 */
+    margin: 0 auto;
 }
 .menu {
     width: 100%;
@@ -269,7 +269,7 @@
     top: 0;
     left: 0;
     opacity: 0;
-    transition: opacity 0.5s ease; /* 渐变效果 */
+    transition: opacity 0.5s;
     z-index: 0;
 }
 .box-img img {
@@ -281,19 +281,19 @@
     opacity: 1; 
     z-index: 1;
 }
-.box-left {
+.box-left {/*轮播图切换按钮*/
     position: absolute;
     width: 35px;
     height: 70px;
     color: #ccc;
     top: 50%;
-    transform: translateY(-50%); /* 垂直居中 */
+    transform: translateY(-50%);
     border-radius: 5px;
     text-align: center;
     line-height: 70px;
     font-size: 37px;
-    cursor: pointer; /* 鼠标悬浮显示指针，提示可点击 */
-    z-index: 10; /* 确保箭头在图片上层，不被遮挡 */
+    cursor: pointer;
+    z-index: 10; 
     left: 0px;
 }
 .box-left:hover {
@@ -306,13 +306,13 @@
     height: 70px;
     color: #ccc;
     top: 50%;
-    transform: translateY(-50%); /* 垂直居中 */
+    transform: translateY(-50%); 
     border-radius: 5px;
     text-align: center;
     line-height: 70px;
     font-size: 37px;
-    cursor: pointer; /* 鼠标悬浮显示指针，提示可点击 */
-    z-index: 10; /* 确保箭头在图片上层，不被遮挡 */
+    cursor: pointer; 
+    z-index: 10; 
     right: 0px;
 }
 .box-right:hover {
@@ -323,7 +323,7 @@
     position: absolute;
     bottom: 10px;
     left: 50%;
-    transform: translateX(-50%); /* 水平居中 */
+    transform: translateX(-50%);
     z-index: 20;
 }
 .box-choses > ul {
@@ -343,9 +343,9 @@
 .box-choses li:hover {
     background-color: #fff;
 }
-/* 轮播指示器激活状态样式 */
+/* 轮播指示器激活 */
 .box-choses li.active {
-    background-color: #fff; /* 激活的指示器变白，与hover效果一致 */
+    background-color: #fff;
 }
 .submenu {
     list-style: none;
@@ -367,7 +367,7 @@
     background-color: #f5f5f5;
 }
 .dropdown {
-    display: none;
+    display: none;/*默认隐藏*/
     position: absolute;
     top: 50px;
     left: 0;
@@ -501,7 +501,7 @@
     height: auto;
     display: block;
 }
-/* 视频信息区域样式 */
+
 .main-ul .video-info {
     padding: 8px;
 }
