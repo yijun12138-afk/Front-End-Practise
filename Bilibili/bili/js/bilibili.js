@@ -1,4 +1,4 @@
-// 导航栏"更多"下拉菜单功能
+//更多
 const moreItem = document.querySelector('.more');
 const dropdown = document.querySelector('.dropdown');
 moreItem.addEventListener('mouseenter', function() {
@@ -20,7 +20,7 @@ const prevBtn = document.querySelector('.box-left');
 const nextBtn = document.querySelector('.box-right');             
 let index = 0;                                             
 let slideTimer = null;                                              
-//切换轮播图
+
 function switchSlide(targetIndex) {
     
     slideImages[index].classList.remove('active');
@@ -37,7 +37,7 @@ function switchSlide(targetIndex) {
     slideImages[index].classList.add('active');
     slideIndicators[index].classList.add('active');
 }
-//自动轮播功能
+//自动轮播
 function startAutoSlide() {
     // 清除已有定时器，避免重复创建
     if (slideTimer) clearInterval(slideTimer);
@@ -50,7 +50,7 @@ function startAutoSlide() {
 // 左箭头
 prevBtn.addEventListener('click', function() {
     switchSlide(index - 1);
-    startAutoSlide(); // 点击后重置定时器
+    startAutoSlide(); 
 });
 // 右箭头
 nextBtn.addEventListener('click', function() {
@@ -58,9 +58,9 @@ nextBtn.addEventListener('click', function() {
     startAutoSlide();
 });
 //绑定指示器点击事件
-slideIndicators.forEach((indicator, index) => {//foreach遍历数组
-    indicator.addEventListener('click', function() {//给每个小圆点绑定点击事件
-        switchSlide(index);//点击第n个小圆点，就切换到索引为n的图片
+slideIndicators.forEach((indicator, index) => {
+    indicator.addEventListener('click', function() {
+        switchSlide(index);
         startAutoSlide();
     });
 });

@@ -10,7 +10,7 @@
     height: 180px;
     background: #fff;
     display: flex;
-    padding: 0 20px; /* 添加内边距 */
+    padding: 0 20px;
     position: relative;
     overflow: hidden;
 }
@@ -73,7 +73,7 @@
     border-radius: 10px;
     border: 1px solid #ccc;
     cursor: pointer;
-    margin-left: 5px; /* 与搜索框保持距离 */
+    margin-left: 5px;
 }
 .bilibili-logo {
     width: auto;
@@ -98,7 +98,7 @@
     margin-right: 15px;
     display: block;
     text-align: center;
-    width: 60px; /* 固定宽度，避免图标文字错位 */
+    width: 60px;
 }
 .topright li a {
     color: #fff;
@@ -481,8 +481,8 @@
     background: #fff;
     display: flex;
     flex-wrap: wrap;
-    padding: 10px 2vw; /* 核心修改：用vw单位设置左右内边距，适配扩展后的宽度 */
-    gap: 15px; /* 核心修改：用gap统一间距，确保布局整齐 */
+    padding: 10px 50px;
+    gap: 15px; 
 }
 
 .main-ul .video-item {
@@ -521,231 +521,4 @@
 .main-ul .video-title:hover,
 .main-ul .video-up:hover{
     color: #17a9da; 
-}
-
-/* 响应式布局 */
-
-/* 中等屏幕（992px - 1199px） */
-@media (max-width: 1199px) {
-    .menucenter {
-        width: 1400px;
-    }
-    .menucenter li {
-        width: 100px;
-    }
-    .centerleft {
-        width: 750px;
-        padding-bottom: 458px; /* 保持宽高比 */
-    }
-    .center-ul .video-item {
-        width: 320px;
-        height: 280px;
-    }
-    .main-ul .video-item {
-        width: calc((100% - 60px) / 4); /* 4列 */
-    }
-}
-
-/* 平板（768px - 991px） */
-@media (max-width: 991px) {
-    .top {
-        height: 150px;
-        flex-wrap: wrap;
-    }
-    .topleft {
-        order: 2;
-        width: 100%;
-        justify-content: center;
-        margin-top: 10px;
-    }
-    .search-container {
-        order: 1;
-        margin: 10px auto 0;
-    }
-    .topright {
-        order: 3;
-        width: 100%;
-        justify-content: center;
-        margin-top: 10px;
-    }
-    .bilibili-logo {
-        display: none;
-    }
-    
-    .menu {
-        height: auto;
-        flex-wrap: wrap;
-        padding: 10px 0;
-    }
-    .menuleft {
-        width: 100%;
-        justify-content: center;
-    }
-    .menuleft-ul {
-        margin-left: 0;
-        width: auto;
-    }
-    .menucenter {
-        width: 100%;
-        height: auto;
-        margin-left: 0;
-        justify-content: center;
-    }
-    .menuright {
-        width: 100%;
-        justify-content: center;
-    }
-    .menuright-ul {
-        width: 100%;
-        justify-content: center;
-    }
-    .line {
-        display: none; /* 在小屏幕上隐藏分隔线 */
-    }
-    
-    .center {
-        flex-direction: column;
-        margin-left: 0;
-        align-items: center;
-    }
-    .centerleft {
-        width: 90%;
-        padding-bottom: 50%; /* 保持宽高比 */
-    }
-    .center-ul {
-        width: 90%;
-        justify-content: center;
-    }
-    .center-ul .video-item {
-        width: calc(50% - 15px); /* 2列 */
-    }
-    
-    .main-ul .video-item {
-        width: calc((100% - 45px) / 3); /* 3列 */
-    }
-}
-
-/* 手机（576px - 767px） */
-@media (max-width: 767px) {
-    .top {
-        height: auto;
-        padding: 10px;
-    }
-    .topleft {
-        flex-wrap: wrap;
-    }
-    .topleft li {
-        margin: 5px 10px;
-    }
-    .search-container {
-        width: 90%;
-    }
-    .topsearch {
-        width: 100%;
-    }
-    .topright {
-        flex-wrap: wrap;/* 换行 */
-    }
-    .topright li {
-        margin: 5px 10px;
-        width: auto;
-    }
-    
-    .menucenter {
-        overflow-x: auto; /* 水平滚动 */
-        justify-content: flex-start;
-        padding-bottom: 10px;
-    }
-    .menucenter li {
-        flex-shrink: 0; /* 防止项目缩小 */
-    }
-    
-    .centerleft {
-        width: 95%;
-    }
-    .center-ul {
-        width: 95%;
-    }
-    .center-ul .video-item {
-        width: 100%; /* 1列 */
-    }
-    
-    .main-ul {
-        padding: 10px 5vw;
-    }
-    .main-ul .video-item {
-        width: calc((100% - 30px) / 2); /* 2列 */
-    }
-}
-
-/* 小手机（小于576px） */
-@media (max-width: 575px) {
-    .topleft li:not(:first-child) {
-        display: none; /* 隐藏部分导航项 */
-    }
-    .topleft li:first-child {
-        width: 100%;
-        justify-content: center;
-    }
-    
-    .topright li:nth-child(n+4) {
-        display: none; /* 隐藏部分用户菜单项 */
-    }
-    
-    .menuleft-ul {
-        width: 100%;
-    }
-    .menuright-ul {
-        flex-direction: column;
-        height: auto;
-    }
-    .menuright-ul li {
-        width: 100%;
-        margin: 5px 0;
-    }
-    
-    .main-ul .video-item {
-        width: 100%; /* 1列 */
-    }
-    
-    .box-left, .box-right {
-        width: 25px;
-        height: 50px;
-        font-size: 24px;
-        line-height: 50px;
-    }
-    
-    .center-ul .video-title,
-    .main-ul .video-title {
-        font-size: 16px;
-    }
-    .center-ul .video-up,
-    .main-ul .video-up {
-        font-size: 14px;
-    }
-}
-
-/* 超小手机（小于400px） */
-@media (max-width: 399px) {
-    .topleft li {
-        margin: 3px 5px;
-    }
-    .topright li {
-        margin: 3px 5px;
-    }
-    
-    .menucenter li {
-        width: 90px;
-        height: 40px;
-        line-height: 36px;
-        font-size: 14px;
-    }
-    
-    .center-ul {
-        gap: 15px;
-    }
-    
-    .main-ul {
-        gap: 10px;
-    }
 }
