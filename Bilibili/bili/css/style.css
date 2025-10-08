@@ -23,18 +23,16 @@
     object-fit: cover; /* 保持图片比例，避免拉伸变形 */
     z-index: 0;
 }
-
 .topleft,
 .search-container,
 .bilibili-logo,
 .topright {
     position: relative;
-    z-index: 1; /* 层级高于背景图 */
+    z-index: 1;
 }
 .topleft {
     width: auto;
     height: 60px;
-    /* background: rgb(177, 173, 173);  */
     display: flex;
     align-items: center;
 }
@@ -42,10 +40,10 @@
 .topleft li:first-child { 
     display: flex;
     align-items: center;
-    gap: 20px; /* 图标与文字的间距 */
+    gap: 20px;
 }
 .topleft .icon-bilibili-fill {
-    font-size: 35px; /* 图标大小 */
+    font-size: 35px;
     color: #fff;
 }
 .topleft li {
@@ -88,7 +86,6 @@
 .topright {
     width: auto;
     height: 60px;
-    /* background: rgb(177, 173, 173);  */
     display: flex;
     margin-top: 10px;
     margin-left: auto;
@@ -180,7 +177,7 @@
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    padding: 0 10px; /* 增加左右内边距，避免内容贴边 */
+    padding: 0 10px;
     position: relative;
 }
 .menucenter li {
@@ -259,7 +256,6 @@
     height: 550px;
     margin-top: 10px;
     border-radius: 7px;
-    /* background: rgb(177, 173, 173);  */
     overflow: hidden;
 }
 .box-img {
@@ -281,7 +277,7 @@
     opacity: 1; 
     z-index: 1;
 }
-.box-left {/*轮播图切换按钮*/
+.box-left {
     position: absolute;
     width: 35px;
     height: 70px;
@@ -321,9 +317,9 @@
 }
 .box-choses {
     position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
+    bottom: 20px;
+    left: 20px;
+    transform: none;
     z-index: 20;
 }
 .box-choses > ul {
@@ -340,12 +336,32 @@
     margin-right: 8px;
     cursor: pointer;
 }
-.box-choses li:hover {
-    background-color: #fff;
-}
-/* 轮播指示器激活 */
+.box-choses li:hover,
 .box-choses li.active {
     background-color: #fff;
+    transform: scale(1.2); 
+}
+.box-view {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0));
+    z-index: 15;
+    display: flex;
+    align-items: flex-end;
+    padding: 15px 20px;
+}
+.box-title {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.2;
+    margin: 0 0 5px auto;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 70%;
 }
 .submenu {
     list-style: none;

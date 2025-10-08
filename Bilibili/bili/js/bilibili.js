@@ -20,6 +20,14 @@ const prevBtn = document.querySelector('.box-left');
 const nextBtn = document.querySelector('.box-right');             
 let index = 0;                                             
 let slideTimer = null;                                              
+const boxTitles = [
+    "干杯音乐节盛大开幕！",
+    "傅园慧已失控新综艺开播",
+    "VOGUE杂志入驻B站发布独家内容",
+    "哈利波特烘焙奇才上线",
+    "舌尖侦探事务所全新上线"
+];
+const boxTitleElement = document.getElementById('boxTitle');
 
 function switchSlide(targetIndex) {
     
@@ -36,6 +44,7 @@ function switchSlide(targetIndex) {
 
     slideImages[index].classList.add('active');
     slideIndicators[index].classList.add('active');
+    boxTitleElement.textContent = boxTitles[index];
 }
 //自动轮播
 function startAutoSlide() {
@@ -67,6 +76,7 @@ slideIndicators.forEach((indicator, index) => {
 //初始化
 slideImages[0].classList.add('active');
 slideIndicators[0].classList.add('active');
+boxTitleElement.textContent = boxTitles[0];
 
 startAutoSlide();
 
