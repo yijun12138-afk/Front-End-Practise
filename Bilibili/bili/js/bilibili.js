@@ -1,16 +1,16 @@
 //更多
 const moreItem = document.querySelector('.more');
 const dropdown = document.querySelector('.dropdown');
-moreItem.addEventListener('mouseenter', function() {
+moreItem.addEventListener('mouseenter', () =>{
     dropdown.style.display = 'block';
 });
-moreItem.addEventListener('mouseleave', function() {
+moreItem.addEventListener('mouseleave', () =>{
     dropdown.style.display = 'none';
 });
-dropdown.addEventListener('mouseenter', function() {
+dropdown.addEventListener('mouseenter', () =>{
     dropdown.style.display = 'block';
 });
-dropdown.addEventListener('mouseleave', function() {
+dropdown.addEventListener('mouseleave', () =>{
     dropdown.style.display = 'none';
 });
 // 轮播图
